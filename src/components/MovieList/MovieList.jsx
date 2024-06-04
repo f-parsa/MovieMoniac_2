@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './MovieList.css'
 import Fire from '../../assets/fire.png'
 import MovieCard from './MovieCard'
 
+
 const MovieList = () => {
+
+    useEffect(() => {
+        fetchMovies()
+    }, [])
+    const fetchMovies = async () => {
+        const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=83837907fa5c7cdbc976c9e12ca2c412')
+        const data = await response.json()
+        console.log(data);
+    }
   return (
     <section className='movie_list'>
         <header className='align_center movie_list_header'>
