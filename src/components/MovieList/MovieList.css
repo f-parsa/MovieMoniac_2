@@ -38,6 +38,6 @@
 
 .movie_cards {
     display: flex;
-    font-weight: wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
